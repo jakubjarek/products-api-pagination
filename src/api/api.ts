@@ -16,7 +16,7 @@ export const getPageData = async (page: string) => {
 
   const data = await (await fetch(url)).json();
   cache[url] = data;
-  
+
   return data as DataType;
 };
 
@@ -54,6 +54,7 @@ function getProductFromCachedPages(id: string) {
   return cachedProducts.find((p) => String(p.id) === id);
 }
 
+// we need these default values for the pagination component
 function createDefaultDataObject(product: ProductType): DataType {
   return {
     page: 1,

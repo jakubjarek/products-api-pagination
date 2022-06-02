@@ -1,7 +1,7 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
-import { TableContextProvider } from '../Table/context/TableContext';
-import Table from '../Table/Table';
+import { TableContextProvider } from 'Table/context/TableContext';
+import Table from 'Table/Table';
 
 function App() {
   return (

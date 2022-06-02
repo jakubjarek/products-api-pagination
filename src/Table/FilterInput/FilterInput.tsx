@@ -17,12 +17,18 @@ function FilterInput() {
     filter && setFilterValue(filter);
   }, [searchParams]);
 
+  // debounce the input
+  useEffect(() => {
+    const timeout = setTimeout(() => changeCurrentFilter(filterValue), 300);
+
+    return () => clearTimeout(timeout);
+  }, [filterValue, changeCurrentFilter]);
+
   const handleValueChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
     if (!isInputValid(value)) return;
 
     setFilterValue(value);
-    changeCurrentFilter(value);
   };
 
   return (

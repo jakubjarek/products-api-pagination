@@ -37,7 +37,7 @@ function FilterableTable() {
   }
 
   // If products length is less than PER_PAGE, fill
-  // the space with empty row to avoid layout jumps
+  // the space with an empty row to avoid layout jumps
   const emptyRowsHeight = (PER_PAGE - state.data.length) * 53;
 
   return (

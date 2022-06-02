@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-
 import Box from '@mui/material/Box';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
+import Divider from '@mui/material/Divider';
 
 import { useTableContext } from '../context/TableContext';
 
@@ -20,7 +20,6 @@ function FilterInput() {
   // debounce the input
   useEffect(() => {
     const timeout = setTimeout(() => changeCurrentFilter(filterValue), 300);
-
     return () => clearTimeout(timeout);
   }, [filterValue, changeCurrentFilter]);
 
@@ -32,22 +31,25 @@ function FilterInput() {
   };
 
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: 1,
-        width: '100%',
-        px: '1rem',
-      }}
-    >
-      <SearchIcon color="disabled" />
-      <InputBase
-        value={filterValue}
-        onChange={handleValueChange}
-        sx={{ width: '100%', py: 1.5 }}
-        placeholder="Filter using id"
-      />
+    <Box>
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: 1,
+          width: '100%',
+          px: '1rem',
+        }}
+      >
+        <SearchIcon color="disabled" />
+        <InputBase
+          value={filterValue}
+          onChange={handleValueChange}
+          sx={{ width: '100%', py: 1.5 }}
+          placeholder="Filter using id"
+        />
+      </Box>
+      <Divider />
     </Box>
   );
 }

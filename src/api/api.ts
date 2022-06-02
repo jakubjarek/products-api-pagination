@@ -27,7 +27,7 @@ export const getSingleProductData = async (id: string) => {
     return cache[url];
   }
 
-  // check cached pages wether they contain the product
+  // check cached pages wether for product
   const cachedProduct = getProductFromCachedPages(id);
 
   let product;

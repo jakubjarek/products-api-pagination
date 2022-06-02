@@ -6,7 +6,6 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
-import Divider from '@mui/material/Divider';
 import { CircularProgress } from '@mui/material';
 
 import { PER_PAGE } from 'App/constants';
@@ -44,7 +43,6 @@ function FilterableTable() {
     <Box sx={{ maxWidth: '728px', margin: '3rem auto 0' }}>
       <Paper sx={{ width: '100%' }}>
         <FilterInput />
-        <Divider />
         <TableContainer component="div">
           <Table>
             <TableHead>

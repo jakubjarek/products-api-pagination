@@ -21,7 +21,8 @@ function FilterInput() {
   useEffect(() => {
     const timeout = setTimeout(() => changeCurrentFilter(filterValue), 300);
     return () => clearTimeout(timeout);
-  }, [filterValue, changeCurrentFilter]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filterValue]);
 
   const handleValueChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
